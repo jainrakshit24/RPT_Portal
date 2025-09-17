@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Related Party Transactions - Login</title>
+<!-- CSS link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-icon">📋</div>
+            <div>
+                <div class="header-title"> Related Party Transactions </div>
+                <div class="header-subtitle">Process Management & Approval Dashboard</div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="main-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-icon">📋</div>
+                <h1 class="login-title">System Login</h1>
+                <p class="login-subtitle">Please select your login type and enter your credentials</p>
+            </div>
+
+            <div class="login-tabs">
+                <button class="tab active" id="buTab" onclick="switchTab('bu')">
+                    <span class="tab-icon">👤</span>
+                    BU Login
+                </button>
+                <button class="tab" id="secretaryTab" onclick="switchTab('secretary')">
+                    <span class="tab-icon">📋</span>
+                    Company Secretary
+                </button>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group" id="companyGroup">
+                    <label for="company" class="form-label">Company</label>
+                    <select id="company" class="form-input" required>
+                        <option value="">Select your company</option>
+                        <option value="abc-corp">ABC Corporation</option>
+                        <option value="xyz-ltd">XYZ Limited</option>
+                        <option value="tech-solutions">HJI Pvt.Ltd</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        class="form-input" 
+                        placeholder="Enter BU username"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="form-input" 
+                        placeholder="Enter password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="login-button" id="loginButton">
+                    Sign in as BU User
+                </button>
+            </form>
+        </div>
+    </div>
+
+<!-- JS link -->
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
